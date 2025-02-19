@@ -1,0 +1,386 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif, 'Krona One';
+}
+
+   /* Header transparan yang menyatu dengan slideshow */
+   .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Pastikan di atas gambar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+/* Logo di kiri */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    font-family: "Krona One";
+}
+
+.menu-container {
+    position: absolute;
+    top: 75px; /* Sedikit lebih ke bawah */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px; /* Jarak antar item lebih rapi */
+}
+
+.nav li {
+    list-style: none;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    padding: 8px 12px;
+    font-family: 'Krona One';
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #007BFF;
+}
+
+.nav a.active::after,
+.nav a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #007BFF;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    right: 0;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-menu form {
+    margin: 0;
+}
+
+.login {
+    font-size: 16px;
+    font-weight: bold;
+    color : #fff;
+    font-family: 'Krona One';
+    margin-top : 0px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+/* Untuk navbar ketika mobile view */
+.navbar .navbar-nav .nav-item .btn-logout {
+    padding: 8px 16px;
+}
+
+.gambar-home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    overflow: hidden;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+    opacity: 1;
+}
+
+.gambar-home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    text-align: center;
+}
+
+.gambar-home h1 {
+    font-size: 3rem; /* Ukuran font lebih besar */
+    font-weight: bold;
+    font-family : 'Krona One';
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.gambar-cabai {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    overflow: hidden;
+}
+
+.gambar-cabai img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gambar-cabai .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Memindahkan teks ke kiri */
+    padding-left: 20px; /* Menambahkan jarak dari kiri */
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: left; /* Teks rata kiri */
+}
+
+.gambar-cabai h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 5px 6px 5px rgba(0, 0, 0, 0.5);
+    color: yellow; /* Warna merah */
+}
+
+.gambar-cabai p {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: yellow; /* Warna merah */
+}
+
+.gambar-cabai .btn {
+    position: absolute;
+    top: 50%; /* Vertikal sejajar dengan tengah */
+    right: 100px; /* Jarak dari tepi kanan */
+    transform: translateY(-50%); /* Memastikan tombol sejajar dengan tengah */
+    z-index: 2;
+}
+
+.scroll-container {
+    display: flex; /* Susun gambar dalam satu baris */
+    width: 100%; /* Lebar kontainer sesuai layar */
+    height: 100%; /* Sesuaikan dengan tinggi gambar */
+    overflow-x: scroll; /* Aktifkan scroll horizontal */
+    scroll-behavior: smooth; /* Animasi scroll yang halus */
+    scrollbar-width: none; /* Sembunyikan scrollbar di browser modern */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Sembunyikan scrollbar di Chrome/Safari */
+}
+
+.scroll-container img {
+    width: 100%; /* Sesuaikan ukuran gambar */
+    flex-shrink: 0; /* Jangan biarkan gambar mengecil */
+    object-fit: cover;
+}
+
+.slide-up {
+    opacity: 0; /* Tidak terlihat */
+    transform: translateY(30px); /* Posisi teks lebih rendah */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Efek transisi animasi */
+}
+
+/* Keadaan teks ketika terlihat di viewport */
+.slide-up.active {
+    opacity: 1; /* Teks terlihat */
+    transform: translateY(0); /* Posisi teks normal */
+}
+
+.gambar-hama {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    overflow: hidden;
+}
+
+.gambar-hama img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gambar-hama .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* Memindahkan teks ke kanan */
+    padding-right: 20px; /* Menambahkan jarak dari kanan */
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: right; /* Teks rata kanan */
+}
+
+.gambar-hama h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 5px 6px 5px rgba(0, 0, 0, 0.5);
+    color: yellow; /* Warna merah */
+}
+
+.gambar-hama p {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 3px 4px 3px rgba(0, 0, 0, 0.5);
+    color: yellow; /* Warna merah */
+}
+
+
+.gambar-hama .btn {
+    position: absolute;
+    top: 50%; /* Vertikal sejajar dengan tengah */
+    left: 100px; /* Jarak dari tepi kanan */
+    transform: translateY(-50%); /* Memastikan tombol sejajar dengan tengah */
+    z-index: 2;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Ketika teks terlihat di viewport */
+.slide-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-horizontal {
+    display: flex; /* Susun gambar dalam satu baris */
+    width: 100%; /* Lebar kontainer sesuai layar */
+    height: 100%; /* Sesuaikan dengan tinggi gambar */
+    overflow-x: scroll; /* Aktifkan scroll horizontal */
+    scroll-behavior: smooth; /* Animasi scroll yang halus */
+    scrollbar-width: none; /* Sembunyikan scrollbar di browser modern */
+}
+
+.scroll-horizontal::-webkit-scrollbar {
+    display: none; /* Sembunyikan scrollbar di Chrome/Safari */
+}
+
+.scroll-horizontal img {
+    width: 100%; /* Sesuaikan ukuran gambar */
+    flex-shrink: 0; /* Jangan biarkan gambar mengecil */
+    object-fit: cover;
+}
+
+
+.container {
+    padding: 200px; /* Jarak dalam container */
+}
+
+.container h1 {
+    margin-bottom: 10px; /* Jarak bawah judul */
+}
+
+.container .d-flex a {
+    margin: 0 10px; /* Jarak horizontal antar tombol */
+}
